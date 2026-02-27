@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="tei_zine_minimal.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="tei_zine_minimal.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="eng">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <!-- TITLE & AUTHOR STATEMENT-->
+                <title>The president is gone</title>
+                <author source="https://archive.org/details/@angel_ballesteros246">
+                    <choice>
+                        <orig>
+                            <persName>Angélica</persName>
+                        </orig>
+                        <reg>
+                            <addName>H34RTCORE</addName>
+                        </reg>
+                    </choice>
+                    <!--https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONA -->
+                    <ref target="https://archive.org/details/@angel_ballesteros246">Internet
+                        Archive</ref>
+                </author>
+            </titleStmt>
+
+            <editionStmt>
+                <!-- EDITION STATEMENT -->
+                <edition>TEI assignment 2</edition>
+                <respStmt>
+                    <resp>encoded by</resp>
+                    <persName ref="https://github.com/Anarchiviste/TEI-assignment2.git">
+                        <surname>Musquin</surname>
+                        <forename>Jules</forename>
+                    </persName>
+                </respStmt>
+            </editionStmt>
+
+            <publicationStmt>
+                <!-- DISTRIBUTOR & AVAILABILITY STATEMENT-->
+                <distributor>
+                    <persName ref="https://github.com/Anarchiviste/TEI-assignment2.git">
+                        <surname>Musquin</surname>
+                        <forename>Jules</forename>
+                    </persName>
+                    <date when="2025-11-09"/>
+                </distributor>
+                <availability>
+                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                        <p>Attribution-NonCommercial-ShareAlike 4.0 International</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier
+                        source="https://archive.org/details/presgone-zine-online/page/n1/mode/2up">
+                        <repository>Internet Archive</repository>
+                        <idno>ark:/13960/s2xnb4wz60r</idno>
+                    </msIdentifier>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+
+    <text>
+        <front>
+            <titlePage type="titlepage" n="1" rendition="manuscript">
+                <docTitle>
+                    <titlePart type="main" letter_color="purple" material="paper"
+                        material_color="white">The President is gone.</titlePart>
+                    <titlePart type="sub" letter_color="black" material_color="white"
+                        material="paper">And other notes<lb/>from the future</titlePart>
+                </docTitle>
+                <docAuthor letter_color="black" material="paper" material_color="white"
+                    rend="black ink white_paper">
+                    <persName>Angélica</persName>
+                </docAuthor>
+                <docDate letter_color="black" material="paper" material_color="white"
+                    rend="black ink white_paper">2023</docDate>
+            </titlePage>
+        </front>
+
+        <body>
+            <div1 n="2" rendition="manuscript" letter_color="purple" material="paper"
+                material_color="white">
+                <p>The president<lb/>is gone.</p>
+                <p>And the vice<lb/>president is gone<lb/> too.</p>
+                <p>We created a <lb/>world where</p>
+                <p> we didn't need <lb/>these false idols.</p>
+            </div1>
+            <div1 n="3" rendition="manuscript" letter_color="purple" material="paper"
+                material_color="white">
+                <p>The priest is gone.<lb/> The missionaries are <lb/>all gone too.</p>
+                <p>We didn't need them <lb/>telling us what to do.</p>
+                <p>We decided to do some <lb/>thinking for ourselves.</p>
+                <p>So now</p>
+                <p>The police are gone,</p>
+                <p>The <choice>
+                        <orig>sherrifs</orig>
+                        <corr>sheriff</corr>
+                    </choice> and <lb/>deputies and hey <lb/>the criminals are <lb/>all gone
+                    too.</p>
+                <p>Theres no jails and<lb/> no prisons, no heartless</p>
+                <p><lb/>warehouses full of <lb/>people, living breathing.</p>
+                <p><lb/>We didn't want those things <lb/>anymore. So we</p>
+                <p><lb/>Got rid of all our bosses,<lb/> we all quit our "jobs"</p>
+                <p><lb/>and realized we could actually find our purpose...</p>
+            </div1>
+            <div1 n="4" rendition="manuscript" letter_color="purple" material="paper"
+                material_color="pink">
+                <p><lb/>We got <lb/>rid of the <lb/>Landlords ... it</p>
+                <p><lb/>wasn't there land <lb/>to "lord" anyway ...</p>
+                <p><lb/>and we got rid of <lb/>renters too.</p>
+                <p><lb/>Now were all just <lb/>livers... livers ?</p>
+                <p><lb/>Haha ... I mean were <lb/>all people who get <lb/>to be alive,</p>
+                <p><lb/>People who get <lb/>to experience our <lb/>world</p>
+                <p><lb/>and not just <lb/>fight to survive it.</p>
+            </div1>
+            <div1 n="5" rendition="manuscript">
+                <div2 letter_color="purple" material="paper" material_color="pink">
+                    <p><lb/>So we got rid of <lb/>the corporations. <lb/>That's right.</p>
+                    <p><lb/>Now <lb/>the CEOs are gone <lb/>and the shareholders <lb/>and investors
+                        and <lb/>even the consumers are gone too.</p>
+                </div2>
+                <div2 letter_color="purple" material="paper" material_color="white">
+                    <p><lb/>We got rid <lb/>of them when</p>
+                    <p><lb/>They were <lb/>treating the <lb/>rest of the <lb/>world like a <lb/>game
+                        ...</p>
+                    <p><lb/>They <lb/>played by unfair <lb/>rules...</p>
+                    <p><lb/>So we burned <lb/>the rule book</p>
+                    <p><lb/>And the game board, <lb/>all the cards and <lb/>the dice,</p>
+                    <p><lb/>and we got rid <lb/>of the markets <lb/>and the money and</p>
+                    <p><lb/>we started valuing <lb/>people ...animals ...plants ... <lb/>the world
+                        ...</p>
+                    <p><lb/>For what they are :</p>
+                    <p>Gifts ... Blessigngs ... <lb/>not from any <lb/>of us ... <lb/>to all of us
+                        ...</p>
+                    <p><lb/>Gifts.</p>
+                </div2>
+            </div1>
+            <div1 n="6" rendition="manuscript" letter_color="purple" material="paper"
+                material_color="white">
+                <p><lb/>So we got rid <lb/>of the food prices <lb/>and the "cost" of healthcare
+                    and</p>
+                <p><lb/>decided to live in <lb/>abundance. We <lb/>stopped putting a <lb/>price tag
+                    on life.</p>
+                <p><lb/>So we got rid of <lb/>the rich. And we <lb/>got rid of the <lb/>poor. We
+                    decided <lb/>that we all could <lb/>do more...</p>
+                <p>We got rid of <lb/>the borders and <lb/>walls... The binary <lb/>structures that
+                    kept <lb/>us apart...</p>
+                <p>We realized <lb/>how fragile they were, <lb/>how easily they could
+                    <lb/>crumble.</p>
+                <p>They <lb/>didn't <lb/>stand <lb/>a <lb/>chance <lb/>against <lb/>the power we had
+                    ...</p>
+                <p><lb/>That we still have.</p>
+                <p><lb/>The power of love ... <lb/>creativity ...solidarity</p>
+                <p><lb/>We never once surrendered.</p>
+            </div1>
+            <div1 n="7" rendition="manuscript" letter_color="purple" material_color="yellow"
+                material="paper">
+                <p><lb/>So now the hatred <lb/>is gone. <lb/>The silence and <lb/>shame too.</p>
+                <p><lb/>We got rid <lb/>of them; we <lb/>loved to hard !</p>
+                <p><lb/>In the best way <lb/>possible. We <lb/>embodied our truths.</p>
+                <p><lb/>We didn't let lies <lb/>stop us. So we <lb/>got rid of the <lb/>mass media
+                    and <lb/> the legislators are <lb/>all gone too !</p>
+                <p>We got rid <lb/>of the teachers, there <lb/>are no more of them <lb/>and we got
+                    rid of <lb/>the students too.</p>
+                <p>We realized we have <lb/><emph>lots</emph> more fun when <lb/>we all become
+                    <lb/>learners, creators, participants <lb/>in our reality and <lb/>not mere
+                    predefined roles.</p>
+                <p><lb/>And we were so <lb/>successful ! <lb/>We still are.</p>
+            </div1>
+            <div1 n="8" rendition="manuscript" letter_color="purple" material_color="yellow"
+                material="paper">
+                <p><lb/>And now the <lb/>violence is all <lb/>gone,</p>
+                <p><lb/>and the <lb/>tanks and guns <lb/>are gone too.</p>
+                <p><lb/>The gas is gone, <lb/>the bombs, the <lb/>chemicals they <lb/>dumped into
+                    the <lb/>earth our home.</p>
+                <p><lb/>They are all gone.</p>
+                <p><lb/><emph>We got rid of them !</emph></p>
+                <p><lb/><emph>Chose life,</emph></p>
+                <p><lb/>Chose love, chose connection <lb/>instead of fear.</p>
+            </div1>
+            <div1 n="9" rendition="manuscript" letter_color="purple" material_color="blue"
+                material="surgical mask">
+                <p><lb/>We chose <lb/>each other. <lb/>And we still <lb/>do. That's <lb/>how we
+                    <lb/>made it so <lb/>far.</p>
+            </div1>
+            <div1 n="10" rendition="manuscript" letter_color="purple" material_color="yellow"
+                material="paper">
+                <p><lb/>But we looked <lb/>beyond ourselves <lb/>too and we chose <lb/>the world,
+                    again <lb/>as it is, gifts, <lb/>glorious and <lb/>abundant and <lb/>we realized
+                    we had <lb/>so much we were <lb/>missing.</p>
+                <p><lb/>So we <lb/>don't have the <lb/>scarcity the <lb/>fear and coercion <lb/>any
+                    more.</p>
+                <p><lb/>No more <lb/>extraction and <lb/>expansion and <lb/>exploitation <caesura/>
+                    <lb/>that's all gone. <lb/>We embraced <lb/>cycles <lb/>and <lb/>transitions,
+                    <lb/>trangressions, <lb/>transformations,</p>
+                <p>We got rid <lb/>of control <lb/>and welcomed <lb/>in community. <lb/>And we
+                    thrive, <lb/>and we thrive, <lb/>and we thrive, <lb/><emph>and we
+                    thrive.</emph></p>
+            </div1>
+        </body>
+        <back>
+            <div1 n="11" rendition="manuscript">
+                <p letter_color="red" material="paper" material_color="white"><lb/>They may burn our
+                    books <lb/>but we will <lb/>still <lb/>write <lb/>more.</p>
+                <div2>
+                    <p letter_color="pink" material_color="white" material="paper"><lb/>share this
+                        zine :</p>
+                    <figure>
+                        <figDesc>A QR code leading to a 404 error</figDesc>
+                    </figure>
+                </div2>
+                <div2>
+                    <figure>
+                        <figDesc>Instagram logo</figDesc>
+                    </figure>
+                    <p letter_color="pink" material="paper" material_color="white">@h34rtcore</p>
+                </div2>
+            </div1>
+        </back>
+    </text>
+</TEI>
