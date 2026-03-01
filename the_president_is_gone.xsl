@@ -5,20 +5,24 @@
     <xsl:output method="html"/>
 <!-- VARIABLES LIÉES AU FONCTIONNEMENT DE BASE -->
 <xsl:variable name="head">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>The Zine Encoding Project</title>
-        <link rel="icon" type="image/x-icon" href="../img/icon.jpg"/>
-        <link type="text/css" rel="stylesheet" href="css.css"/>
-    </head>
+        <head>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <title>The Zine Encoding Project</title>
+            <link rel="icon" type="image/x-icon" href="../img/icon.jpg"/>
+            <link type="text/css" rel="stylesheet" href="css.css"/>
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+            <link href="https://fonts.googleapis.com/css2?family=Abel&amp;display=swap" rel="stylesheet"/>
+        </head>
 </xsl:variable>
+    
 <xsl:variable name="header">
     <header>
         <div class="header">
             <div class="header-logo"><img src="../img/icon.jpg" width="200%"/></div>
-            <div class="header-title"><h1>The Zine Encoding project</h1><p>Let's preserve the underground cultures of yesterday</p></div>
-            <div class="header-autor">a work by <h2><xsl:copy-of select="$editor"></xsl:copy-of></h2></div>
+            <div class="header-title"><a href="index.html"><h1>The Zine Encoding project</h1></a><p>Let's preserve the underground cultures of yesterday</p></div>
+            <div class="header-autor"><p>a work by <xsl:copy-of select="$editor"></xsl:copy-of></p></div>
         </div>
         <div class="navbar">
             <div class="navbutton">
@@ -45,9 +49,14 @@
             <body>
                 <xsl:copy-of select="$header"></xsl:copy-of>
                 <div class="display_text">
-                    <p>
+                    <p>Hi, my name is Jules Musquin and last year I worked a lot on web archives and emergent archives of cultural memories. For this assignment, I wanted to keep working on popular writing style and archives. I chose to work on Fanzine (for fanatic magazine). They are a type of text creation made to be printed or to be published online by amateurs, they are a place expression that have been used by music fans, activists, artistes, civil right movements to spread informations and popular education. Zines use a variety of writing styles, print techniques and methods of illustration. Some zines are written by a single person, but most of them are collective expression around a common subject. Authors are always amateurs that can borrow from styles such as comics, poetry, novels, or manifestos.</p>
                         
-                    </p>
+                    <p>In France, zines are mostly used by feminists and left-wing activists to spread awareness for health, mental-health, human-right and politics. Zines are part of what we call at the École des chartes, “new heritage objects”, since these objects are not part of “legitimate culture,” libraries and institutionals archives are not very effective at preserving them and making them available. As a result, groups dedicated to preserving this memory have been set up. For examples I can cite :</p>
+                    <ul>   
+                        <li><a href="https://www.fanzino.org/presentation/presentation/">La Fanzinothèque à Poitiers</a> that is the biggest collection of fanzine in France and host a publishing house specially for zines.</li>
+                        <li><a href="https://gittings.qzap.org/">The Queer Zine archive project</a> that host a queer zine faire in New-York.</li>
+                    </ul>
+                    <p>To make it easier for you to read and correct, I have decided to focus on English-language zines found on the Internet Archives. To make a useful use of XML and TEI, I will encode the material of the zine (some are in paper, printed on surgical masks, with gold paper), the illustration type (drawings, prints, engravings, collages), and the form of the text.</p>
                 </div>
             </body>
         </html>
@@ -59,6 +68,7 @@
            <xsl:copy-of select="$head"/>
            <body>
                 <xsl:copy-of select="$header"/>
+                <xsl:copy-of select="//front//text()"/>
            </body>
        </html>
    </xsl:result-document>
@@ -71,6 +81,7 @@
                 <xsl:copy-of select="$head"/>
                 <body>
                     <xsl:copy-of select="$header"></xsl:copy-of>
+                    <xsl:copy-of select=".//text()"/>
                 </body>
             </html>
         </xsl:result-document>

@@ -1,69 +1,121 @@
 :root {
-  --bg-color:#F9F8F6;
-  --accent-color:#C9B59C; 
-  --tone_1:#EFE9E3;
-  --tone_2:#D9CFC7;
-  --radius_effect:5px; 
+    --bg-color: #F8F9FA;            /* Blanc cassé très clair */
+    --accent-color: #A8D5BA;        /* Vert menthe doux, plus présent mais toujours pâle */
+    --tone_1: #B8E0D2;              /* Vert eau claire, légèrement plus soutenu */
+    --tone_2: #E6F0E6;              /*             /* Vert pâle légèrement saturé */
+    --text_color: #3D5C4C;          /* Vert foncé pour le texte, bon contraste */
+    --radius_effect: 8px;
+    --default-font: "Abel", sans-serif;
+    --default-weight: 400;
+    --default-style: normal;
+    --gradient: linear-gradient(rgba(200, 230, 201, 0.3), rgba(248, 249, 250, 0.8)); /* Dégradé ultra subtil */
 }
 
-
-body{
-	margin-top:5%;
-	margin-bottom:10%;
-	margin-left:15%;
-	margin-right:15%; background: var(--bg-color);
+body {
+    margin: 5% 20% 10%;
+    background-color: var(--bg-color);
+    font-family: var(--default-font);
+    font-weight: var(--default-weight);
+    font-style: var(--default-style);
+    color: var(--text_color);
+    background-image: var(--gradient);
 }
 
 .header {
-    	display: flex;
-    	align-items: center;
-    	gap: 20px;
-    	padding: 10px;
-    	border-bottom: 2px solid #ddd;
-    	margin-bottom: 10px;
-	background:var(--tone_1);
-	border-radius:var(--radius_effect);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 2px solid var(--tone_2);
+    margin-bottom: 15px;
+    background: var(--accent-color);
+    border-radius: var(--radius_effect);
 }
 
 .header div {
-    	flex: 1 1 auto;
-    	text-align: center;
+    flex: 1 1 auto;
+    text-align: center;
+    font-family: var(--default-font);
+    font-weight: var(--default-weight);
+    font-style: var(--default-style);
 }
 
 .header-logo img {
-    	max-width: 100px;
-    	height: auto;
+    max-width: 100px;
+    height: auto;
 }
 
 .header-title h1 {
-    	font-size: 2.5em;
-    	color: #333;
-    	margin: 0;
+    font-size: 2.5em;
+    color: var(--text_color);
+    margin: 0;
+    font-family: var(--default-font);
+    font-weight: var(--default-weight);
 }
 
 .header-title p {
-    	font-size: 1.2em;
-    	color: #666;
-    	margin: 5px 0 0 0;
+    font-size: 1.2em;
+    color: var(--text_color);
+    margin: 5px 0 0;
+    font-family: var(--default-font);
+    font-weight: var(--default-weight);
 }
 
 .header-author p {
-	font-size: 1.1em;
-    	color: #555;
-    	margin: 0;
+    display: block;
+    color: var(--text_color);
+    margin: 5px 0;
+    font-family: var(--default-font);
+    font-weight: var(--default-weight);
+    font-style: var(--default-style);
 }
 
-.navbar{
-	display:flex;
-	align-items:center;
-	gap:20px;
-	padding:10px;
-	border-bottom:2px solid #ddd;
-	margin-bottom: 30px;
-	background: var(--tone_1);
-	border-radius: var(--radius_effect);
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border-bottom: 2px solid var(--tone_2);
+    margin-bottom: 30px;
+    background: var(--accent-color);
+    border-radius: var(--radius_effect);
 }
 
-.navbutton{
-	display: inline-block;
+.navbutton {
+    flex: 1 1 auto;
+    min-width: 80px;
+    max-width: 120px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    border-radius: var(--radius_effect);
+    background: var(--tone_2);
+    color: var(--bg-color);
+    text-decoration: none;
+    font-family: var(--default-font);
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.display_text p {
+    text-align: justify;
+    font-family: var(--default-font);
+    font-weight: var(--default-weight);
+    font-style: var(--default-style);
+    color: var(--text_color);
+    margin: 1em 0;
+    line-height: 1.6;
+}
+
+.display_text ul {
+    text-align: justify;
+    font-family: var(--default-font);
+    font-weight: var(--default-weight);
+    font-style: var(--default-style);
+    color: var(--text_color);
+    margin: 1em 0;
+    padding-left: 2em;
+    line-height: 1.6;
 }

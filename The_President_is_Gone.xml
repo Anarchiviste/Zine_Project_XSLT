@@ -68,7 +68,7 @@
                     <titlePart type="main" letter_color="purple" material="paper"
                         material_color="white">The President is gone.</titlePart>
                     <titlePart type="sub" letter_color="black" material_color="white"
-                        material="paper">And other notes<lb/>from the future</titlePart>
+                        material="paper">And other notes <lb/>from the future</titlePart>
                 </docTitle>
                 <docAuthor letter_color="black" material="paper" material_color="white"
                     rend="black ink white_paper">
@@ -82,8 +82,8 @@
         <body>
             <div1 n="2" rendition="manuscript" letter_color="purple" material="paper"
                 material_color="white">
-                <p>The president<lb/>is gone.</p>
-                <p>And the vice<lb/>president is gone<lb/> too.</p>
+                <p>The president <lb/>is gone.</p>
+                <p>And the vice <lb/>president is gone<lb/> too.</p>
                 <p>We created a <lb/>world where</p>
                 <p> we didn't need <lb/>these false idols.</p>
             </div1>
