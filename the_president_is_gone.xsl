@@ -25,7 +25,7 @@
         <div class="header">
             <div class="header-logo"><img src="../img/icon.jpg" width="200%"/></div>
             <div class="header-title"><a href="index.html"><h1>The Zine Encoding project</h1></a><p>Let's preserve the underground cultures of yesterday</p></div>
-            <div class="header-autor"><p>a work by <xsl:copy-of select="$editor"></xsl:copy-of></p></div>
+            <div class="header-autor"><p><a href="https://github.com/Anarchiviste">a work by <xsl:copy-of select="$editor"></xsl:copy-of></a></p></div>
         </div>
         <div class="navbar">
             <div class="navbutton">

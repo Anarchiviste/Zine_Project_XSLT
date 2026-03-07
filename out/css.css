@@ -148,6 +148,12 @@ header {
     white-space: nowrap;
 }
 
+.header-autor a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
 /* Navbar */
 
 .navbar {
@@ -219,7 +225,7 @@ body > *:not(header):not(#visioneuse):first-of-type {
 }
 
 .zine-intro {
-    flex: 0 0 300px;
+    flex: 0 0 600px;
     padding: 2.5rem 2rem 2.5rem 3rem;
     display: flex;
     flex-direction: column;
