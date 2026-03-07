@@ -8,8 +8,7 @@
       <link type="text/css" rel="stylesheet" href="css.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css2?family=Abel&amp;display=swap" rel="stylesheet">
-   </head>
+      <link href="https://fonts.googleapis.com/css2?family=Abel&amp;display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/openseadragon@4.1/build/openseadragon/openseadragon.min.js"></script></head>
    <body>
       <header>
          <div class="header">
@@ -35,25 +34,38 @@
             <div class="navbutton"><a href="page_11.html">page n°11</a></div>
          </div>
       </header>
-      
-      So we got rid of the corporations. That's right.
-      Now the CEOs are gone and the shareholders and investors
-      and even the consumers are gone too.
-      
-      
-      We got rid of them when
-      They were treating the rest of the world like a game
-      ...
-      They played by unfair rules...
-      So we burned the rule book
-      And the game board, all the cards and the dice,
-      and we got rid of the markets and the money and
-      we started valuing people ...animals ...plants ... the world
-      ...
-      For what they are :
-      Gifts ... Blessigngs ... not from any of us ... to all of us
-      ...
-      Gifts.
-      
-      </body>
+      <div class="main-content">
+         <div class="zine-intro">
+            <p>So we got rid of the corporations. That's right.</p>
+            <p>Now the CEOs are gone and the shareholders and investors
+               and even the consumers are gone too.</p>
+            <p>We got rid of them when</p>
+            <p>They were treating the rest of the world like a game
+               ...</p>
+            <p>They played by unfair rules...</p>
+            <p>So we burned the rule book</p>
+            <p>And the game board, all the cards and the dice,</p>
+            <p>and we got rid of the markets and the money and</p>
+            <p>we started valuing people ...animals ...plants ... the world
+               ...</p>
+            <p>For what they are :</p>
+            <p>Gifts ... Blessigngs ... not from any of us ... to all of us
+               ...</p>
+            <p>Gifts.</p>
+         </div>
+         <div id="visioneuse">
+            <div id="_viewer" style="width: 100%; height: 800px;"></div><script type="text/javascript">
+                                    document.addEventListener("DOMContentLoaded", function() {
+                                    var _viewer = OpenSeadragon({
+                                    id: "_viewer",
+                                    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+                                    sequenceMode: true,
+                                    tileSources: [
+                                    'https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0004.jp2/info.json',
+                                    ]
+                                    });
+                                    });
+                               </script></div>
+      </div>
+   </body>
 </html>

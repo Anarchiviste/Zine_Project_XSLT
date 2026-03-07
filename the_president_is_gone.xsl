@@ -1,20 +1,23 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     version="2.0">
-
-    <xsl:output method="html"/>
+<!-- CONSIGNES  -->
+<!-- utiliser 4 XPATH : concat, upper-case, lower-case --> 
+<!-- utiliser 2 prédicat XPATH : -->
+<xsl:output method="html"/>
 <!-- VARIABLES LIÉES AU FONCTIONNEMENT DE BASE -->
 <xsl:variable name="head">
-        <head>
-            <meta charset="utf-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <title>The Zine Encoding Project</title>
-            <link rel="icon" type="image/x-icon" href="../img/icon.jpg"/>
-            <link type="text/css" rel="stylesheet" href="css.css"/>
-            <link rel="preconnect" href="https://fonts.googleapis.com"/>
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
-            <link href="https://fonts.googleapis.com/css2?family=Abel&amp;display=swap" rel="stylesheet"/>
-        </head>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>The Zine Encoding Project</title>
+        <link rel="icon" type="image/x-icon" href="../img/icon.jpg"/>
+        <link type="text/css" rel="stylesheet" href="css.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+        <link href="https://fonts.googleapis.com/css2?family=Abel&amp;display=swap" rel="stylesheet"/> 
+        <script src="https://cdn.jsdelivr.net/npm/openseadragon@4.1/build/openseadragon/openseadragon.min.js"></script>
+    </head>
 </xsl:variable>
     
 <xsl:variable name="header">
@@ -40,7 +43,10 @@
 
 <!-- VARIABLE LIÉES À LA PUBLICATION -->
 <xsl:variable name="editor" select="concat(//publicationStmt//forename/text(), ' ', //publicationStmt//surname/text())"/>
-
+<xsl:variable name="author" select="concat(//teiHeader//titleStmt//persName/text(), ' alias ', //teiHeader//titleStmt//addName/text())"/>
+<xsl:variable name="title" select="upper-case(//teiHeader//title/text())"/>
+<xsl:variable name="site" select="//teiHeader//sourceDesc//repository/text()"/>
+<xsl:variable name="ark" select="lower-case(//teiHeader//sourceDesc//msIdentifier/@source)"/>
 <!-- CRÉATION DE L'INDEX -->
 <xsl:template match="/">
     <xsl:result-document href="out/index.html">
@@ -57,31 +63,74 @@
                         <li><a href="https://gittings.qzap.org/">The Queer Zine archive project</a> that host a queer zine faire in New-York.</li>
                     </ul>
                     <p>To make it easier for you to read and correct, I have decided to focus on English-language zines found on the Internet Archives. To make a useful use of XML and TEI, I will encode the material of the zine (some are in paper, printed on surgical masks, with gold paper), the illustration type (drawings, prints, engravings, collages), and the form of the text.</p>
+                    <p>This site publishes a zine by <xsl:copy-of select="$author"></xsl:copy-of> named <xsl:copy-of select="$title"/> published on <a href="{$ark}"><xsl:copy-of select="$site"/></a></p>
                 </div>
             </body>
         </html>
     </xsl:result-document>
     
 <!-- CRÉATION DE LA PAGE FRONT-->
-   <xsl:result-document href="out/page_1.html">
-       <html>
-           <xsl:copy-of select="$head"/>
-           <body>
+    <xsl:result-document href="out/page_1.html">
+        <html>
+            <xsl:copy-of select="$head"/>
+            <body>
                 <xsl:copy-of select="$header"/>
-                <xsl:copy-of select="//front//text()"/>
-           </body>
+                <div class="main-content">
+                    <div class="zine-intro">
+                        <xsl:copy-of select="//front//text()"/>
+                    </div>
+                    <div id="visioneuse">
+                        <div id="_viewer" style="width: 100%; height: 800px;"/>
+                        <script type="text/javascript">
+                            document.addEventListener("DOMContentLoaded", function() {
+                            var _viewer = OpenSeadragon({
+                            id: "_viewer",
+                            prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+                            sequenceMode: true,
+                            tileSources: [
+                            '<xsl:value-of select="//text//titlePage/@sameAs"/>',
+                            ]
+                            });
+                            });
+                        </script>
+                    </div>
+                </div>
+            </body>
        </html>
    </xsl:result-document>
     
 <!-- CRÉATION DES PAGES VIA DIV -->
-    <xsl:for-each select="//div1">
+   <xsl:for-each select="//div1">
         <xsl:variable name="page_id" select="./@n"/>
         <xsl:result-document href="out/page_{$page_id}.html">
             <html>
                 <xsl:copy-of select="$head"/>
                 <body>
-                    <xsl:copy-of select="$header"></xsl:copy-of>
-                    <xsl:copy-of select=".//text()"/>
+                    <xsl:copy-of select="$header"/>
+                    <div class="main-content">
+                        <div class="zine-intro">
+                            <xsl:for-each select=".//p">
+                                <p>
+                                    <xsl:copy-of select="./text()"/>
+                                </p>
+                            </xsl:for-each>
+                        </div>
+                        <div id="visioneuse">
+                                <div id="_viewer" style="width: 100%; height: 800px;"/>
+                                <script type="text/javascript">
+                                    document.addEventListener("DOMContentLoaded", function() {
+                                    var _viewer = OpenSeadragon({
+                                    id: "_viewer",
+                                    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+                                    sequenceMode: true,
+                                    tileSources: [
+                                    '<xsl:value-of select="./@sameAs"/>',
+                                    ]
+                                    });
+                                    });
+                               </script>
+                        </div>
+                    </div>
                 </body>
             </html>
         </xsl:result-document>

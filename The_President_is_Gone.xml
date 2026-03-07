@@ -52,7 +52,7 @@
             <sourceDesc>
                 <msDesc>
                     <msIdentifier
-                        source="https://archive.org/details/presgone-zine-online/page/n1/mode/2up">
+                        source="https://archive.org/details/presgone-zine-online">
                         <repository>Internet Archive</repository>
                         <idno>ark:/13960/s2xnb4wz60r</idno>
                     </msIdentifier>
@@ -63,7 +63,7 @@
 
     <text>
         <front>
-            <titlePage type="titlepage" n="1" rendition="manuscript">
+            <titlePage type="titlepage" n="1" rendition="manuscript" sameAs="https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0000.jp2/info.json">
                 <docTitle>
                     <titlePart type="main" letter_color="purple" material="paper"
                         material_color="white">The President is gone.</titlePart>
@@ -81,14 +81,14 @@
 
         <body>
             <div1 n="2" rendition="manuscript" letter_color="purple" material="paper"
-                material_color="white">
+                material_color="white" sameAs="https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0001.jp2/info.json">
                 <p>The president <lb/>is gone.</p>
                 <p>And the vice <lb/>president is gone<lb/> too.</p>
                 <p>We created a <lb/>world where</p>
                 <p> we didn't need <lb/>these false idols.</p>
             </div1>
             <div1 n="3" rendition="manuscript" letter_color="purple" material="paper"
-                material_color="white">
+                material_color="white" sameAs="https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0002.jp2/info.json">
                 <p>The priest is gone.<lb/> The missionaries are <lb/>all gone too.</p>
                 <p>We didn't need them <lb/>telling us what to do.</p>
                 <p>We decided to do some <lb/>thinking for ourselves.</p>
@@ -106,7 +106,7 @@
                 <p><lb/>and realized we could actually find our purpose...</p>
             </div1>
             <div1 n="4" rendition="manuscript" letter_color="purple" material="paper"
-                material_color="pink">
+                material_color="pink" sameAs="https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0003.jp2/info.json">
                 <p><lb/>We got <lb/>rid of the <lb/>Landlords ... it</p>
                 <p><lb/>wasn't there land <lb/>to "lord" anyway ...</p>
                 <p><lb/>and we got rid of <lb/>renters too.</p>
@@ -115,7 +115,7 @@
                 <p><lb/>People who get <lb/>to experience our <lb/>world</p>
                 <p><lb/>and not just <lb/>fight to survive it.</p>
             </div1>
-            <div1 n="5" rendition="manuscript">
+            <div1 n="5" rendition="manuscript" sameAs="https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0004.jp2/info.json">
                 <div2 letter_color="purple" material="paper" material_color="pink">
                     <p><lb/>So we got rid of <lb/>the corporations. <lb/>That's right.</p>
                     <p><lb/>Now <lb/>the CEOs are gone <lb/>and the shareholders <lb/>and investors
@@ -138,7 +138,7 @@
                 </div2>
             </div1>
             <div1 n="6" rendition="manuscript" letter_color="purple" material="paper"
-                material_color="white">
+                material_color="white" sameAs="https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0005.jp2/info.json">
                 <p><lb/>So we got rid <lb/>of the food prices <lb/>and the "cost" of healthcare
                     and</p>
                 <p><lb/>decided to live in <lb/>abundance. We <lb/>stopped putting a <lb/>price tag
@@ -156,7 +156,7 @@
                 <p><lb/>We never once surrendered.</p>
             </div1>
             <div1 n="7" rendition="manuscript" letter_color="purple" material_color="yellow"
-                material="paper">
+                material="paper" sameAs="https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0006.jp2/info.json">
                 <p><lb/>So now the hatred <lb/>is gone. <lb/>The silence and <lb/>shame too.</p>
                 <p><lb/>We got rid <lb/>of them; we <lb/>loved to hard !</p>
                 <p><lb/>In the best way <lb/>possible. We <lb/>embodied our truths.</p>
@@ -170,7 +170,7 @@
                 <p><lb/>And we were so <lb/>successful ! <lb/>We still are.</p>
             </div1>
             <div1 n="8" rendition="manuscript" letter_color="purple" material_color="yellow"
-                material="paper">
+                material="paper" sameAs="https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0007.jp2/info.json">
                 <p><lb/>And now the <lb/>violence is all <lb/>gone,</p>
                 <p><lb/>and the <lb/>tanks and guns <lb/>are gone too.</p>
                 <p><lb/>The gas is gone, <lb/>the bombs, the <lb/>chemicals they <lb/>dumped into
@@ -181,12 +181,12 @@
                 <p><lb/>Chose love, chose connection <lb/>instead of fear.</p>
             </div1>
             <div1 n="9" rendition="manuscript" letter_color="purple" material_color="blue"
-                material="surgical mask">
+                material="surgical mask" sameAs="https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0008.jp2/info.json">
                 <p><lb/>We chose <lb/>each other. <lb/>And we still <lb/>do. That's <lb/>how we
                     <lb/>made it so <lb/>far.</p>
             </div1>
             <div1 n="10" rendition="manuscript" letter_color="purple" material_color="yellow"
-                material="paper">
+                material="paper" sameAs="https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0009.jp2/info.json">
                 <p><lb/>But we looked <lb/>beyond ourselves <lb/>too and we chose <lb/>the world,
                     again <lb/>as it is, gifts, <lb/>glorious and <lb/>abundant and <lb/>we realized
                     we had <lb/>so much we were <lb/>missing.</p>
@@ -201,7 +201,7 @@
             </div1>
         </body>
         <back>
-            <div1 n="11" rendition="manuscript">
+            <div1 n="11" rendition="manuscript" sameAs="https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0011.jp2/info.json">
                 <p letter_color="red" material="paper" material_color="white"><lb/>They may burn our
                     books <lb/>but we will <lb/>still <lb/>write <lb/>more.</p>
                 <div2>

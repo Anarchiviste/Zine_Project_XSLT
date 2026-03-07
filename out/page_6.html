@@ -8,8 +8,7 @@
       <link type="text/css" rel="stylesheet" href="css.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css2?family=Abel&amp;display=swap" rel="stylesheet">
-   </head>
+      <link href="https://fonts.googleapis.com/css2?family=Abel&amp;display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/openseadragon@4.1/build/openseadragon/openseadragon.min.js"></script></head>
    <body>
       <header>
          <div class="header">
@@ -35,20 +34,37 @@
             <div class="navbutton"><a href="page_11.html">page n°11</a></div>
          </div>
       </header>
-      So we got rid of the food prices and the "cost" of healthcare
-      and
-      decided to live in abundance. We stopped putting a price tag
-      on life.
-      So we got rid of the rich. And we got rid of the poor. We
-      decided that we all could do more...
-      We got rid of the borders and walls... The binary structures that
-      kept us apart...
-      We realized how fragile they were, how easily they could
-      crumble.
-      They didn't stand a chance against the power we had
-      ...
-      That we still have.
-      The power of love ... creativity ...solidarity
-      We never once surrendered.
-      </body>
+      <div class="main-content">
+         <div class="zine-intro">
+            <p>So we got rid of the food prices and the "cost" of healthcare
+               and</p>
+            <p>decided to live in abundance. We stopped putting a price tag
+               on life.</p>
+            <p>So we got rid of the rich. And we got rid of the poor. We
+               decided that we all could do more...</p>
+            <p>We got rid of the borders and walls... The binary structures that
+               kept us apart...</p>
+            <p>We realized how fragile they were, how easily they could
+               crumble.</p>
+            <p>They didn't stand a chance against the power we had
+               ...</p>
+            <p>That we still have.</p>
+            <p>The power of love ... creativity ...solidarity</p>
+            <p>We never once surrendered.</p>
+         </div>
+         <div id="visioneuse">
+            <div id="_viewer" style="width: 100%; height: 800px;"></div><script type="text/javascript">
+                                    document.addEventListener("DOMContentLoaded", function() {
+                                    var _viewer = OpenSeadragon({
+                                    id: "_viewer",
+                                    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+                                    sequenceMode: true,
+                                    tileSources: [
+                                    'https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0005.jp2/info.json',
+                                    ]
+                                    });
+                                    });
+                               </script></div>
+      </div>
+   </body>
 </html>

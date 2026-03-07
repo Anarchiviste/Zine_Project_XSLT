@@ -8,8 +8,7 @@
       <link type="text/css" rel="stylesheet" href="css.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css2?family=Abel&amp;display=swap" rel="stylesheet">
-   </head>
+      <link href="https://fonts.googleapis.com/css2?family=Abel&amp;display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/openseadragon@4.1/build/openseadragon/openseadragon.min.js"></script></head>
    <body>
       <header>
          <div class="header">
@@ -35,12 +34,29 @@
             <div class="navbutton"><a href="page_11.html">page n°11</a></div>
          </div>
       </header>
-      We got rid of the Landlords ... it
-      wasn't there land to "lord" anyway ...
-      and we got rid of renters too.
-      Now were all just livers... livers ?
-      Haha ... I mean were all people who get to be alive,
-      People who get to experience our world
-      and not just fight to survive it.
-      </body>
+      <div class="main-content">
+         <div class="zine-intro">
+            <p>We got rid of the Landlords ... it</p>
+            <p>wasn't there land to "lord" anyway ...</p>
+            <p>and we got rid of renters too.</p>
+            <p>Now were all just livers... livers ?</p>
+            <p>Haha ... I mean were all people who get to be alive,</p>
+            <p>People who get to experience our world</p>
+            <p>and not just fight to survive it.</p>
+         </div>
+         <div id="visioneuse">
+            <div id="_viewer" style="width: 100%; height: 800px;"></div><script type="text/javascript">
+                                    document.addEventListener("DOMContentLoaded", function() {
+                                    var _viewer = OpenSeadragon({
+                                    id: "_viewer",
+                                    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+                                    sequenceMode: true,
+                                    tileSources: [
+                                    'https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0003.jp2/info.json',
+                                    ]
+                                    });
+                                    });
+                               </script></div>
+      </div>
+   </body>
 </html>
