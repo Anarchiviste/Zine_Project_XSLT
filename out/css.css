@@ -273,6 +273,30 @@ body > *:not(header):not(#visioneuse):first-of-type {
     margin-top: 0.2rem;
 }
 
+.display-text {
+    border-right: 2px solid var(--ink);
+    background-color: var(--paper-dark);
+    background-image: var(--grain);
+}
+
+.display-text p {
+    padding: 1rem 1rem 1rem 1rem;
+    gap: 10px;
+}
+
+.display-text ul {
+    padding: 1rem 3rem;
+    gap: 10px;  
+}
+
+.display-text a {
+    text-decoration: none;
+    color: var(--rust-dim)
+}
+
+.display-text a:hover{
+    color: var(--rust)
+}
 
 #visioneuse {
 flex: 1 1 auto;

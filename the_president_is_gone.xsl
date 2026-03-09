@@ -54,7 +54,7 @@
             <xsl:copy-of select="$head"></xsl:copy-of>
             <body>
                 <xsl:copy-of select="$header"></xsl:copy-of>
-                <div class="display_text">
+                <div class="display-text">
                     <p>Hi, my name is Jules Musquin and last year I worked a lot on web archives and emergent archives of cultural memories. For this assignment, I wanted to keep working on popular writing style and archives. I chose to work on Fanzine (for fanatic magazine). They are a type of text creation made to be printed or to be published online by amateurs, they are a place expression that have been used by music fans, activists, artistes, civil right movements to spread informations and popular education. Zines use a variety of writing styles, print techniques and methods of illustration. Some zines are written by a single person, but most of them are collective expression around a common subject. Authors are always amateurs that can borrow from styles such as comics, poetry, novels, or manifestos.</p>
                         
                     <p>In France, zines are mostly used by feminists and left-wing activists to spread awareness for health, mental-health, human-right and politics. Zines are part of what we call at the École des chartes, “new heritage objects”, since these objects are not part of “legitimate culture,” libraries and institutionals archives are not very effective at preserving them and making them available. As a result, groups dedicated to preserving this memory have been set up. For examples I can cite :</p>
@@ -63,7 +63,7 @@
                         <li><a href="https://gittings.qzap.org/">The Queer Zine archive project</a> that host a queer zine faire in New-York.</li>
                     </ul>
                     <p>To make it easier for you to read and correct, I have decided to focus on English-language zines found on the Internet Archives. To make a useful use of XML and TEI, I will encode the material of the zine (some are in paper, printed on surgical masks, with gold paper), the illustration type (drawings, prints, engravings, collages), and the form of the text.</p>
-                    <p>This site publishes a zine by <xsl:copy-of select="$author"></xsl:copy-of> named <xsl:copy-of select="$title"/> published on <a href="{$ark}"><xsl:copy-of select="$site"/></a></p>
+                    <p>This test site publishes a zine by <xsl:copy-of select="$author"></xsl:copy-of> named <xsl:copy-of select="$title"/> published on <a href="{$ark}"><xsl:copy-of select="$site"/></a></p>
                 </div>
             </body>
         </html>
@@ -86,7 +86,8 @@
                             var _viewer = OpenSeadragon({
                             id: "_viewer",
                             prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-                            sequenceMode: true,
+                            sequenceMode: false,
+                            defaultZoomLevel: 0.5,
                             tileSources: [
                             '<xsl:value-of select="//text//titlePage/@sameAs"/>',
                             ]
@@ -122,7 +123,8 @@
                                     var _viewer = OpenSeadragon({
                                     id: "_viewer",
                                     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-                                    sequenceMode: true,
+                                    sequenceMode: false,
+                                    defaultZoomLevel: 0.5,
                                     tileSources: [
                                     '<xsl:value-of select="./@sameAs"/>',
                                     ]
