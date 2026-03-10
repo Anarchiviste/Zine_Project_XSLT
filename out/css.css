@@ -215,6 +215,12 @@ body > *:not(header):not(#visioneuse):first-of-type {
 
 /*Le reste*/
 
+hr {
+    height:3px;
+    border-width:0;
+    background-color: var(--rust);
+}
+
 .main-content {
     display: flex;
     flex-direction: row;

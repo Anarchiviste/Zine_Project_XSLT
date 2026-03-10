@@ -1,11 +1,13 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     version="2.0">
-<!-- CONSIGNES  -->
-<!-- utiliser 4 XPATH : concat, upper-case, lower-case --> 
-<!-- utiliser 2 prédicat XPATH : -->
+
+
 <xsl:output method="html"/>
+    
 <!-- VARIABLES LIÉES AU FONCTIONNEMENT DE BASE -->
+    
+<!-- Variable pour l'élément head -->
 <xsl:variable name="head">
     <head>
         <meta charset="utf-8"/>
@@ -20,10 +22,11 @@
     </head>
 </xsl:variable>
     
+<!-- Variable pour l'élément header -->
 <xsl:variable name="header">
     <header>
         <div class="header">
-            <div class="header-logo"><img src="../img/icon.jpg" width="200%"/></div>
+            <div class="header-logo"><img src="../img/icon.jpg" alt="An Icone representing the project"/></div>
             <div class="header-title"><a href="index.html"><h1>The Zine Encoding project</h1></a><p>Let's preserve the underground cultures of yesterday</p></div>
             <div class="header-autor"><p><a href="https://github.com/Anarchiviste">a work by <xsl:copy-of select="$editor"></xsl:copy-of></a></p></div>
         </div>
@@ -37,20 +40,26 @@
                     <a href="page_{$button_id}.html">page n°<xsl:value-of select="$button_id"/></a>
                 </div>
             </xsl:for-each>
+            <div class="navbutton">
+                <a href="page_index.html">Index</a>
+            </div>
         </div>
     </header>
 </xsl:variable>
 
 <!-- VARIABLE LIÉES À LA PUBLICATION -->
+    
 <xsl:variable name="editor" select="concat(//publicationStmt//forename/text(), ' ', //publicationStmt//surname/text())"/>
 <xsl:variable name="author" select="concat(//teiHeader//titleStmt//persName/text(), ' alias ', //teiHeader//titleStmt//addName/text())"/>
 <xsl:variable name="title" select="upper-case(//teiHeader//title/text())"/>
 <xsl:variable name="site" select="//teiHeader//sourceDesc//repository/text()"/>
 <xsl:variable name="ark" select="lower-case(//teiHeader//sourceDesc//msIdentifier/@source)"/>
+    
+    
 <!-- CRÉATION DE L'INDEX -->
 <xsl:template match="/">
     <xsl:result-document href="out/index.html">
-        <html>
+        <html lang="en">
             <xsl:copy-of select="$head"></xsl:copy-of>
             <body>
                 <xsl:copy-of select="$header"></xsl:copy-of>
@@ -71,7 +80,7 @@
     
 <!-- CRÉATION DE LA PAGE FRONT-->
     <xsl:result-document href="out/page_1.html">
-        <html>
+        <html lang="en">
             <xsl:copy-of select="$head"/>
             <body>
                 <xsl:copy-of select="$header"/>
@@ -81,7 +90,7 @@
                     </div>
                     <div id="visioneuse">
                         <div id="_viewer" style="width: 100%; height: 800px;"/>
-                        <script type="text/javascript">
+                        <script>
                             document.addEventListener("DOMContentLoaded", function() {
                             var _viewer = OpenSeadragon({
                             id: "_viewer",
@@ -89,7 +98,7 @@
                             sequenceMode: false,
                             defaultZoomLevel: 0.5,
                             tileSources: [
-                            '<xsl:value-of select="//text//titlePage/@sameAs"/>',
+                            '<xsl:value-of select="//text//titlePage/@sameAs"/>', <!-- Le lien IIIF a été ajouté rétroactivement dans l'encodage TEI car cela fait sens dans le cadre d'un encodgage de zine. -->
                             ]
                             });
                             });
@@ -104,7 +113,7 @@
    <xsl:for-each select="//div1">
         <xsl:variable name="page_id" select="./@n"/>
         <xsl:result-document href="out/page_{$page_id}.html">
-            <html>
+            <html lang="en">
                 <xsl:copy-of select="$head"/>
                 <body>
                     <xsl:copy-of select="$header"/>
@@ -115,10 +124,33 @@
                                     <xsl:copy-of select="./text()"/>
                                 </p>
                             </xsl:for-each>
+                            <hr/>
+                            <ul>
+                                <li>Typographic Techniques :
+                                    <xsl:choose> <!-- Il y a beaucoup plus simple que de faire ce xsl:when, mais cela rentre dans les consignes et fonctionne car mon rng n'accepte que manuscrit ou printed en entrée. -->
+                                        <xsl:when test="./@rendition = 'manuscript'">
+                                            various manuscripts
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            printed work
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                    <br/>
+                                    Color of the ink : <xsl:value-of select="./@letter_color"/>    
+                                    
+                                </li>
+                                <li>
+                                    Material used : <xsl:value-of select="./@material"/>
+                                    <br/>
+                                    Color of the ink : <xsl:value-of select="./@material_color"/>    
+                                    
+                                </li>
+    
+                            </ul>
                         </div>
                         <div id="visioneuse">
                                 <div id="_viewer" style="width: 100%; height: 800px;"/>
-                                <script type="text/javascript">
+                                <script>
                                     document.addEventListener("DOMContentLoaded", function() {
                                     var _viewer = OpenSeadragon({
                                     id: "_viewer",
@@ -136,7 +168,20 @@
                 </body>
             </html>
         </xsl:result-document>
-    </xsl:for-each>
+   </xsl:for-each>
+    
+<!-- CRÉATION DE LA PAGE INDEX -->
+<xsl:result-document href="out/page_index.html">
+    <html lang="en">
+        <xsl:copy-of select="$head"/>
+        <body>
+            <xsl:copy-of select="$header"/>
+            <div class="display-text">
+                <p>zizi</p>
+            </div>
+        </body>
+    </html>
+</xsl:result-document>
 </xsl:template>
 
 </xsl:stylesheet>
