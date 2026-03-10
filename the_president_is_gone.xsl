@@ -55,7 +55,9 @@
 <xsl:variable name="site" select="//teiHeader//sourceDesc//repository/text()"/>
 <xsl:variable name="ark" select="lower-case(//teiHeader//sourceDesc//msIdentifier/@source)"/>
     
-    
+<!-- TEMPLATES DE PUBLICATION-->
+
+
 <!-- CRÉATION DE L'INDEX -->
 <xsl:template match="/">
     <xsl:result-document href="out/index.html">
@@ -125,28 +127,58 @@
                                 </p>
                             </xsl:for-each>
                             <hr/>
-                            <ul>
-                                <li>Typographic Techniques :
-                                    <xsl:choose> <!-- Il y a beaucoup plus simple que de faire ce xsl:when, mais cela rentre dans les consignes et fonctionne car mon rng n'accepte que manuscrit ou printed en entrée. -->
-                                        <xsl:when test="./@rendition = 'manuscript'">
-                                            various manuscripts
+                            <table>
+                                <tr>
+                                    <th>
+                                        Technique
+                                    </th>
+                                    <th>
+                                        Material
+                                    </th>
+                                    <th>
+                                        Color
+                                    </th>
+                                    <th>
+                                        Ink
+                                    </th>
+                                </tr>
+                                    <xsl:choose>
+                                        <xsl:when test="./@letter_color">
+                                            <tr>
+                                                <th>
+                                                    <xsl:value-of select="./@rendition"/>
+                                                </th>
+                                                <th>
+                                                    <xsl:value-of select="./@material"/>
+                                                </th>    
+                                                <th>
+                                                    <xsl:value-of select="./@material_color"/>
+                                                </th>
+                                                <th>
+                                                    <xsl:value-of select="./@letter_color"/>
+                                                </th>
+                                            </tr>
                                         </xsl:when>
                                         <xsl:otherwise>
-                                            printed work
+                                            <xsl:for-each select=".//div2">
+                                                <tr>
+                                                    <th>
+                                                        <xsl:value-of select="parent::div1/@rendition"/>
+                                                    </th>
+                                                    <th>
+                                                        <xsl:value-of select="./@material"/>
+                                                    </th>
+                                                    <th>
+                                                        <xsl:value-of select="./@material_color"/>
+                                                    </th>
+                                                    <th>
+                                                        <xsl:value-of select="./@letter_color"/>
+                                                    </th>
+                                                </tr>
+                                            </xsl:for-each>
                                         </xsl:otherwise>
                                     </xsl:choose>
-                                    <br/>
-                                    Color of the ink : <xsl:value-of select="./@letter_color"/>    
-                                    
-                                </li>
-                                <li>
-                                    Material used : <xsl:value-of select="./@material"/>
-                                    <br/>
-                                    Color of the ink : <xsl:value-of select="./@material_color"/>    
-                                    
-                                </li>
-    
-                            </ul>
+                            </table>
                         </div>
                         <div id="visioneuse">
                                 <div id="_viewer" style="width: 100%; height: 800px;"/>
