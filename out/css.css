@@ -27,7 +27,7 @@ html {
     font-size: 16px;
 }
 
-/* Gros morceaux */
+/* Body*/
 body {
     background-color: var(--paper);
     background-image: var(--grain);
@@ -201,7 +201,6 @@ body > :not(header):not(#visioneuse):not(.main-content) {
     z-index: 1;
 }
 
-
 body > p,
 body > text {
     font-family: var(--font-display);
@@ -241,6 +240,36 @@ hr {
     background-image: var(--grain);
     position: relative;
     overflow-y: auto;
+}
+
+.zine-intro table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+}
+
+/*Tableaux*/
+.zine-intro table th {
+    background-color: var(--ink);
+    color: var(--paper);
+    border-color: var(--rust-dim);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.zine-intro table td {
+    border: 1px solid var(--ink);
+    padding: 0.4rem 0.6rem;
+    text-align: left;
+    font-weight: 400;
+    text-transform: lowercase;
+}
+
+.zine-intro table tr:hover{
+    background-color: var(--mist);
 }
 
 .zine-title {
@@ -303,6 +332,108 @@ hr {
 .display-text a:hover{
     color: var(--rust)
 }
+
+/*Footer*/
+footer {
+    border-top: 3px solid var(--ink);
+    background-color: var(--paper-dark);
+    background-image: var(--grain);
+    position: relative;
+    overflow: hidden;
+    position: fixed;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: var(--rust);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 3rem 1.2rem 3.5rem;
+    gap: 2rem;
+}
+
+.footer_logo img {
+    width: auto;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    filter: sepia(20%) contrast(1.05);
+    opacity: 0.85;
+    transition: opacity var(--transition);
+}
+
+.footer_logo img:hover {
+    opacity: 10;
+    transform: translate(-1px, -1px);
+}
+
+.footer-autor {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--mist);
+    letter-spacing: 0.1em;
+}
+
+.footer-autor a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.footer-autor:hover{
+    color: var(--ink);
+}
+
+/*Bouton*/
+
+.bouton_div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem 0;
+}
+
+.buton {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
+    background-color: var(--paper);
+    border: 2px solid var(--paper);
+    border-radius: var(--radius);
+    cursor: pointer;
+    position: relative;
+    transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+    box-shadow: 3px 3px 0 var(--rust);
+}
+
+.buton:hover {
+    background-color: var(--rust);
+    border-color: var(--rust);
+    box-shadow: 5px 5px 0 var(--ink);
+    transform: translate(-1px, -1px);
+}
+
+.buton:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--rust);
+}
+
+.buton a {
+    display: block;
+    padding: 0.5rem 1.1rem;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+/*Visionneuse*/
 
 #visioneuse {
 flex: 1 1 auto;

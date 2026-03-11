@@ -199,20 +199,24 @@
         </body>
         <back>
             <div1 n="11" rendition="manuscript" sameAs="https://iiif.archive.org/image/iiif/3/presgone-zine-online%2FPRESGONE%20ONLINE%20FINAL%202_jp2.zip%2FPRESGONE%20ONLINE%20FINAL%202_jp2%2FPRESGONE%20ONLINE%20FINAL%202_0011.jp2/info.json">
-                <p letter_color="red" material="paper" material_color="white"><lb/>They may burn our
-                    books <lb/>but we will <lb/>still <lb/>write <lb/>more.</p>
-                <div2>
-                    <p letter_color="pink" material_color="white" material="paper"><lb/>share this
+                
+                <div2 letter_color="red" material="paper" material_color="white">
+                    <p>
+                        <lb/>They may burn our books <lb/>but we will <lb/>still <lb/>write <lb/>more.
+                    </p>
+                </div2>
+                <div2 letter_color="pink" material_color="white" material="paper">
+                    <p><lb/>share this
                         zine :</p>
                     <figure>
                         <figDesc>A QR code leading to a 404 error</figDesc>
                     </figure>
                 </div2>
-                <div2>
+                <div2 letter_color="pink" material_color="white" material="paper">
                     <figure>
                         <figDesc>Instagram logo</figDesc>
                     </figure>
-                    <p letter_color="pink" material="paper" material_color="white">@h34rtcore</p>
+                    <p>@h34rtcore</p>
                 </div2>
             </div1>
         </back>
