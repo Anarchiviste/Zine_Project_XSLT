@@ -97,24 +97,34 @@
 <!-- VARIABLE LIÉES À LA PUBLICATION --> <!-- j'ai utilisé pleins de fonctions pour rentrer dans les consignes mais ce n'est pas forcément pertinent -->
     
 <xsl:variable name="editor" select="string-join((//publicationStmt//forename/text(), //publicationStmt//surname/text()), ' ')"/>
+    
 <xsl:variable name="author" select="concat(//teiHeader//titleStmt//persName/text(), ' alias ', //teiHeader//titleStmt//addName/text())"/>
+    
 <xsl:variable name="title" select="upper-case(//teiHeader//title/text())"/>
+    
 <xsl:variable name="site" select="//teiHeader//repository/text()"/>
+    
 <xsl:variable name="ark" select="lower-case(//teiHeader//msIdentifier/@source)"/>
+    
 <xsl:variable name="licence" select="//teiHeader//licence//text()"/>
+    
 <xsl:variable name="licence_uri" select="//teiHeader//licence/@target"/>
+    
 <xsl:variable name="number_pages">
     <xsl:value-of select="count(//div1) + count(//front/titlePage)"/> pages,  <!-- additionne les valeurs des div1 + titlePage -->
 </xsl:variable>
-    <xsl:variable name="number_materials">
-        <xsl:value-of select="count(//div1[not(@material = preceding-sibling::div1/@material)])"/> 
-        <!-- compte en distinguant les doublons avec not, mais j'ai jamais réussi à le faire fonctionner correctement, 
-            il y a toujours un doublon qui se faufile, il suffit de faire -1 pour avoir le chiffre réel-->
-    </xsl:variable>
-    <xsl:variable name="number_ink">
-        <xsl:value-of select="count(//front/titlePage//*[@letter_color][not(@letter_color = following::*/@letter_color)]) + count(//div1[not(@letter_color = preceding-sibling::div1/@letter_color)]/@letter_color) + count(//div2[not(@letter_color = preceding-sibling::div2/@letter_color) and not(@letter_color = //div1/@letter_color)and not(@letter_color = //front/titlePage//*/@letter_color)]/@letter_color)"/> 
-        <!-- Super long mais globalement la même chose que la fonction précédente : compte distinctement les valeurs de titlePage, div1 et div2 et les additionnes pour donner le nombre d'encres différentes utilisées-->
-    </xsl:variable>
+    
+<xsl:variable name="number_materials">
+    <xsl:value-of select="count(//div1[not(@material = preceding-sibling::div1/@material)])"/> 
+    <!-- compte le nombre d'occurence de l'attribut material 
+        en distinguant les doublons avec not, mais j'ai jamais réussi à le faire fonctionner correctement, 
+        il y a toujours un doublon qui se faufile, il suffit de faire -1 pour avoir le chiffre réel-->
+</xsl:variable>
+    
+<xsl:variable name="number_ink">
+    <xsl:value-of select="count(//front/titlePage//*[@letter_color][not(@letter_color = following::*/@letter_color)]) + count(//div1[not(@letter_color = preceding-sibling::div1/@letter_color)]/@letter_color) + count(//div2[not(@letter_color = preceding-sibling::div2/@letter_color) and not(@letter_color = //div1/@letter_color)and not(@letter_color = //front/titlePage//*/@letter_color)]/@letter_color)"/> 
+    <!-- Super long mais globalement la même chose que la fonction précédente : compte distinctement les valeurs de titlePage, div1 et div2 et les additionnes pour donner le nombre d'encres différentes utilisées-->
+</xsl:variable>
 
 <!-- TEMPLATES DE PUBLICATION-->
 
@@ -127,6 +137,7 @@
             <body>
                 <xsl:copy-of select="$header"></xsl:copy-of>
                 <div class="display-text">
+                    <p>You can find the <a href="https://github.com/Anarchiviste/tei_assignment_3">original project in TEI</a> and my custom rng schema and the XSLT stylesheet used for this work on my <a href="{$site}">github</a> </p>
                     <p>Hi, my name is <xsl:value-of select="$editor"/> and last year I worked a lot on web archives and emergent archives of cultural memories. For this assignment, I wanted to keep working on popular writing style and archives. I chose to work on Fanzine (for fanatic magazine). They are a type of text creation made to be printed or to be published online by amateurs, they are a place expression that have been used by music fans, activists, artistes, civil right movements to spread informations and popular education. Zines use a variety of writing styles, print techniques and methods of illustration. Some zines are written by a single person, but most of them are collective expression around a common subject. Authors are always amateurs that can borrow from styles such as comics, poetry, novels, or manifestos.</p>
                         
                     <p>In France, zines are mostly used by feminists and left-wing activists to spread awareness for health, mental-health, human-right and politics. Zines are part of what we call at the École des chartes, “new heritage objects”, since these objects are not part of “legitimate culture,” libraries and institutionals archives are not very effective at preserving them and making them available. As a result, groups dedicated to preserving this memory have been set up. For examples I can cite :</p>
@@ -239,7 +250,7 @@
                             <hr/>
                             <table>
                                 <xsl:copy-of select="$table"/>
-                                <xsl:choose> <!-- Cette règle existe pour s'accomoder des pages avec plusieures couleures par page. Dans ces cas là l'information n'est pas encodée dans div1, mais en utilisant div2 -->
+                                <xsl:choose> <!-- Cette règle existe pour s'accomoder des pages avec plusieurs couleurs par page. Dans ces cas là l'information n'est pas encodée dans div1, mais en utilisant div2 -->
                                     <xsl:when test="./@letter_color"> <!-- cas pour les pages monochromes -->
                                         <tr>
                                             <td>
@@ -276,7 +287,7 @@
                                     </xsl:otherwise>
                                 </xsl:choose>
                             </table>
-                            <div class="bouton_div"> <!-- Bouttons de navigation page à page -->
+                            <div class="bouton_div">
                                 <xsl:choose>
                                     <xsl:when test="./@n != 11"> <!-- Cette règle s'applique à toutes les pages sauf la 1 et la 11 -->
                                         <xsl:variable name="n_suivant">
@@ -292,7 +303,7 @@
                                             <a href="page_{$n_suivant + 1}.html">page suivante</a> <!-- ajoute +1 au n du noeud courant pour créer un bouton qui avance dans les pages -->
                                         </div>
                                     </xsl:when>
-                                    <xsl:otherwise> <!-- cas pour la dernière page qui est la dernière -->
+                                    <xsl:otherwise> <!-- cas pour la dernière page qui est la dernière et ne possède pas de page suivante à afficher-->
                                         <xsl:variable name="n_suivant">
                                             <xsl:value-of select="./@n"/>
                                         </xsl:variable>
@@ -344,7 +355,7 @@
                 </p>
                 <div class="zine-intro">
                     <p>In this Zine, the editor recensed <xsl:copy-of select="$number_pages"/> using 
-                        <xsl:copy-of select="$number_materials - 1"></xsl:copy-of> <!-- le fameux -1 pour avoir le compte réel de matériaux utilisés -->
+                        <xsl:copy-of select="$number_materials - 1"></xsl:copy-of> <!-- le fameux -1 cité plus haut pour avoir le compte réel de matériaux utilisés -->
                         differents materials and 
                         <xsl:copy-of select="$number_ink"></xsl:copy-of>
                         color of ink.
@@ -387,7 +398,7 @@
                         </tr>
                     </xsl:for-each>
                     <xsl:for-each select="//div1"> <!-- Cette boucle itère sur toutes les autres pages -->
-                        <xsl:choose> <!-- Cette règle existe pour s'accomoder des pages avec plusieures couleures par page. Dans ces cas là l'information n'est pas encodée dans div1, mais en utilisant div2 -->
+                        <xsl:choose> <!-- Cette règle existe pour s'accomoder des pages avec plusieurs couleurs par page. Dans ces cas là l'information n'est pas encodée dans div1, mais en utilisant div2 -->
                             <xsl:when test="./@letter_color"> <!-- cas pour les pages monochromes -->
                                 <tr>
                                     <td>
